@@ -1,6 +1,16 @@
 import cors from "cors";
+import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
+import path from "path";
+
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config({ path: path.resolve(__dirname, "..", ".env") });
+}
+
+// load database models
+import "./models/post";
+import "./models/user";
 
 // environment variables
 const HOST = process.env.HOST || "127.0.0.1";
