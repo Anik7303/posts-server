@@ -12,6 +12,9 @@ if (process.env.NODE_ENV !== "production") {
 import "./models/post";
 import "./models/user";
 
+// middlewares
+import { error404Middleware, errorsMiddleware } from "./middlewares";
+
 // environment variables
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8000";
@@ -22,6 +25,10 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// catch 404 & other errors
+app.use(error404Middleware);
+app.use(errorsMiddleware);
 
 async function main(): Promise<void> {
   try {

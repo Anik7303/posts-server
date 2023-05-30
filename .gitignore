@@ -1,3 +1,6 @@
+# vscode configuration files
+.vscode/*
+
 # node package files
 node_modules/*
 

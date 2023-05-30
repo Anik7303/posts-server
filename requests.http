@@ -1,0 +1,5 @@
+# variables
+@baseurl = http://{{host}}:{{port}}
+
+### test root route
+GET {{baseurl}}
