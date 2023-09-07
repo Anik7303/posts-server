@@ -1,4 +1,6 @@
 # variables
+@host = {{$dotenv HOST}}
+@port = {{$dotenv PORT}}
 @baseurl = http://{{host}}:{{port}}
 
 ### test root route

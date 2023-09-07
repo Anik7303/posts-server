@@ -1,12 +1,12 @@
 {
   "name": "posts-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple CRUD server for posts",
   "main": "./src/index.ts",
   "scripts": {
     "prebuild": "rimraf ./build",
-    "build": "tsc",
-    "start": "ts-node ./src/index.ts",
+    "build": "tsc --build",
+    "start": "node ./build/index.js",
     "dev": "nodemon ./src/index.ts"
   },
   "dependencies": {
